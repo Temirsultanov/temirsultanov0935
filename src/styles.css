@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.logo{
+  font-family: 'Montserrat';
+  font-weight: 800;
+  font-size: 30px;
+  color: chocolate;
+  margin-right: 20px;
+}
+body{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+.copyright{
+  margin-left: 16px;
+}
+.footer{
+  margin-top: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #444;
+}
+.footer p{
+  margin: 0;
+  color: white;
+}
+.btncount:first-child{
+  margin-right: 10px;
+}
+.btncount:last-child{
+  margin-left: 10px;
+  text-align: center;
+}

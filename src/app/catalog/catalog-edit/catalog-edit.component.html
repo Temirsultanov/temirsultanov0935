@@ -1,0 +1,75 @@
+<div class="container-fluid mt-4">
+  <form [formGroup]="catalogForm" class="catalogForm">
+    <div class="form-group">
+      <label for="catalogname">Имя</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control col-5"
+        formControlName="name"
+        id="catalogname"
+      >
+    </div>
+    <div class="form-group">
+      <label for="catalogmanufacturer">Изготовитель</label>
+      <input
+        type="text"
+        name="manufacturer"
+        class="form-control col-5"
+        formControlName="manufacturer"
+        id="catalogmanufacturer"
+      >
+    </div>
+    <div class="form-group">
+      <label for="catalogweight">Вес</label>
+      <input
+        type="number"
+        name="weight"
+        class="form-control col-5"
+        formControlName="weight"
+        id="catalogweight"
+      >
+    </div>
+    <div class="form-group">
+      <label for="catalogprice">Цена</label>
+      <input
+        type="number"
+        name="price"
+        class="form-control col-5"
+        formControlName="price"
+        id="catalogprice"
+      >
+    </div>
+    <div class="form-group">
+      <label for="catalogcount">Количество</label>
+      <input
+        type="number"
+        name="count"
+        min="0"
+        class="form-control col-5"
+        formControlName="count"
+        id="catalogcount"
+      >
+    </div>
+    <div class="form-group">
+      <select name="category" class="form-control col-5" formControlName="category" id="category">
+        <option [ngValue]="mcatalogCategory.furnitures">Мебель</option>
+        <option [ngValue]="mcatalogCategory.technics">Техника</option>
+        <option [ngValue]="mcatalogCategory.books">Книга</option>
+        <option [ngValue]="mcatalogCategory.phones">Телефон</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="catalogvendorcode">Артикул</label>
+      <input
+        type="text"
+        name="vendorcode"
+        class="form-control col-5"
+        formControlName="vendorcode"
+        id="catalogvendorcode"
+      >
+    </div>
+    <button class="btn btn-success mr-3" [disabled]="catalogForm.invalid" (click)="onSave()">Сохранить</button>
+    <button class="btn btn-outline-danger" *ngIf="id !== null && id !== undefined" (click)="onDelete()">Удалить</button>
+  </form>
+</div>

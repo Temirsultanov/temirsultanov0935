@@ -1,0 +1,60 @@
+<div class="mt-5 mb-3 mx-2" style="display: flex; flex-direction: column; ">
+  <h5 class="mr-5 mb-0">Filter</h5>
+  <div class="form-check mt-3">
+    <input type="checkbox" style="margin-top: 6px" class="form-check-input" name="filtercount" id="filtercount" [(ngModel)]="filtercount">
+    <label for="filtercount" class="form-check-label">Количество > 0</label>
+  </div>
+  <div class="form-group col-6 mt-3 pl-0">
+    <select name="category" class="form-control col-12" [(ngModel)]="filtercategory" id="category">
+      <option [ngValue]="5"></option>
+      <option [ngValue]="mcatalogCategory.furnitures">Мебель</option>
+      <option [ngValue]="mcatalogCategory.technics">Техника</option>
+      <option [ngValue]="mcatalogCategory.books">Книга</option>
+      <option [ngValue]="mcatalogCategory.phones">Телефон</option>
+    </select>
+  </div>
+  <div class="form-group col-6 mb-3 pl-0">
+    <select name="category" class="form-control col-12" [(ngModel)]="filter" id="category">
+      <option [ngValue]="0"></option>
+      <option [ngValue]="1">Сортировка по цене (по возрастанию)</option>
+      <option [ngValue]="2">Сортировка по цене (по убыванию)</option>
+      <option [ngValue]="3">Сортировка по цене (по возрастанию)</option>
+      <option [ngValue]="4">Сортировка по цене (по убыванию)</option>
+    </select>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table">
+    <thead style="min-width: 1200px!important;">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Вес</th>
+        <th scope="col">Цена</th>
+        <th style="min-width: 150px" scope="col">Количество</th>
+        <th scope="col" class="text-right" style="min-width: 200px;">
+          <button class="btn btn-primary" (click)="onAddProduct()">Добавить товар</button>
+        </th>
+      </tr>
+    </thead>
+    <tbody style="min-width: 1200px!important;">
+      <tr *ngFor="let product of products | filterpipe : filtercategory : filtercount : filter">
+        <th scope="row">{{ product.id }}</th>
+        <td>{{ product.name }}</td>
+        <td>{{categoryCodeToString(product.category)}}</td>
+        <td>{{ product.weight }}</td>
+        <td>{{ product.price }}</td>
+        <td>
+          <button class="btn btn-outline-primary btncount" (click)="onMinusClick(product.id)">−</button>
+          {{ product.count }}
+          <button  class="btn btn-outline-primary btncount" (click)="onPlusClick(product.id)">+</button>
+        </td>
+        <td class="text-right">
+          <button class="btn btn-outline-success" (click)="onEditProduct(product.id)">Изменить</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

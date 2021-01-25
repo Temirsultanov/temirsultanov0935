@@ -1,0 +1,44 @@
+{
+  "catalog": [
+    {
+      "name": "Apple iPhone 11 Pro 256Gb (Gold)",
+      "weight": 2900,
+      "count": 7,
+      "vendorcode": "3439483",
+      "price": 86780,
+      "category": 3,
+      "manufacturer": "QUADRATISCH",
+      "id": 1
+    },
+    {
+      "name": "Стул DS",
+      "weight": 34803,
+      "count": 8,
+      "vendorcode": "3f3fk239#f9k-f#",
+      "price": 12867,
+      "category": 0,
+      "manufacturer": "Azimut",
+      "id": 2
+    },
+    {
+      "name": "Телевизор Area-label 870",
+      "weight": 5000,
+      "count": 0,
+      "vendorcode": "3f3fk239#f9k-f#",
+      "price": 120990,
+      "category": 1,
+      "manufacturer": "LG",
+      "id": 3
+    },
+    {
+      "name": "Граф Монте-Кристо",
+      "weight": 300,
+      "count": 1,
+      "vendorcode": "403ш-49шг",
+      "price": 600,
+      "category": 2,
+      "manufacturer": "Издательство Манн",
+      "id": 4
+    }
+  ]
+}
